@@ -1,0 +1,8 @@
+weapon_shop:
+    resource: "@weaponShopBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# src/weapon/ShopBundle/Resources/config/routing.yml
+weapon_shop_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: weaponShopBundle:Default:index }

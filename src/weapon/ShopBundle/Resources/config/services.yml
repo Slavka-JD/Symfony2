@@ -1,0 +1,4 @@
+services:
+#    weapon_shop.example:
+#        class: weapon\ShopBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,3 @@
+weapon_shop_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: weaponShopBundle:Default:index }
