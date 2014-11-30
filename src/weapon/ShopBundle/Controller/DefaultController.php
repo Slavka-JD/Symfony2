@@ -3,11 +3,19 @@
 namespace weapon\ShopBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    /**
+     * @Template()
+     * @Route("/")
+     * @Method({"GET"})
+     */
+    public function indexAction()
     {
-        return $this->render('weaponShopBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('weaponShopBundle:Default:index.html.twig');
     }
 }
