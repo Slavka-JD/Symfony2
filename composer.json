@@ -4,7 +4,11 @@
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
-        "psr-0": { "": "src/", "SymfonyStandard": "app/" }
+        "psr-0": {
+            "": "src/",
+            "SymfonyStandard": "app/",
+            "Acme": "src/"
+        }
     },
     "require": {
         "php": ">=5.3.3",
@@ -13,11 +17,16 @@
         "doctrine/doctrine-bundle": "~1.2",
         "twig/extensions": "~1.0",
         "symfony/assetic-bundle": "~2.3",
-        "symfony/swiftmailer-bundle": "~2.3",
+        "sensio/generator-bundle": "2.0.*",
+        "symfony/swiftzmailer-bundle": "~2.3",
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
+        "gedmo/doctrine-extensions": "dev-master",
         "incenteev/composer-parameter-handler": "~2.0"
+        "_comment": "your other packages",
+        "stof/doctrine-extensions-bundle": "~1.1@dev",
+
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
