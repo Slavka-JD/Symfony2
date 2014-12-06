@@ -23,6 +23,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/config/routing_dev.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/composer.json">
           <value>
             <set />
@@ -34,6 +39,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Controller/OrderController.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/DataFixtures/ORM/LoadData.php">
           <value>
             <set />
           </value>
@@ -59,6 +69,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Resources/views/Default/index.html.twig">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/composer.json">
           <value>
             <set />
           </value>

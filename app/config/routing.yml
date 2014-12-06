@@ -1,6 +1,7 @@
-weapon_shop:
-    resource: "@weaponShopBundle/Controller"
+_weapon_shop:
+    resource: "@weaponShopBundle/Resources/config/routing.yml"
     type:   annotation
+    prefix:   /shopadmin
 
 # src/weapon/ShopBundle/Resources/config/routing.yml
 weapon_shop_homepage:

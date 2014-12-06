@@ -25,7 +25,7 @@ class OrderController extends Controller
         if ($request->isMethod('POST')) {
             $product = new Product();
             $product
-                ->setName()($request->request->get('name'))
+                ->setName($request->request->get('name'))
                 ->setPrice($request->request->get('price'))
                 ->setCategoryProduct($request->request->get('CategoryProduct'))
                 ->setProduct($this->getProductRepository()->find($request->request->get('product')));
