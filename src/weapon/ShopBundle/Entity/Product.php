@@ -4,12 +4,11 @@ namespace weapon\ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-
 /**
  * Product
  *
- * @ORM\Table(name="product")
- * @ORM\Entity(repositoryClass="weapon\ShopBundle\Repository\ProductRepository")
+ * @ORM\Table(name="Product")
+ * @ORM\Entity
  */
 class Product
 {
@@ -30,7 +29,8 @@ class Product
     private $name;
 
     /**
-     * @Gedmo\Slug(fields={"name"})
+     *
+     *
      * @ORM\Column(name="slug", type="string", length=255)
      */
     private $slug;
@@ -45,7 +45,7 @@ class Product
     /**
      * @var
      *
-     * @ORM\ManyToOne(targetEntity="School")
+     * @ORM\ManyToOne(targetEntity="Order")
      */
     private $CategoryProduct;
 

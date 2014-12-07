@@ -8,7 +8,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * CategoryProduct
  *
- * @ORM\Table()
+ * @ORM\Table(name="CategoryProduct")
  * @ORM\Entity
  */
 class CategoryProduct
