@@ -3,11 +3,12 @@
 namespace weapon\ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * CategoryProduct
  *
- * @ORM\Table()
+ * @ORM\Table(name="CategoryProduct")
  * @ORM\Entity
  */
 class CategoryProduct

@@ -3,12 +3,13 @@
 namespace weapon\ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Order
  *
- * @ORM\Table(name="order")
- * @ORM\Entity(repositoryClass="weapon\ShopBundle\Repository\OrderRepository")
+ * @ORM\Table(name="`order`")
+ * @ORM\Entity
  */
 class Order
 {

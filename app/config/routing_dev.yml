@@ -12,7 +12,3 @@ _configurator:
 
 _main:
     resource: routing.yml
-
-# weaponDemoBundle route
-_weapon_demo:
-    resource: "@weaponShopBundle/Resources/config/routing.yml"

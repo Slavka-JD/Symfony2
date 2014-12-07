@@ -8,7 +8,17 @@
             <set />
           </value>
         </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/AppKernel.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/autoload.php">
           <value>
             <set />
           </value>
@@ -68,7 +78,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Repository/OrderRepository.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Resources/config/routing.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Resources/views/Default/index.html.twig">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/vendor/autoload.php">
           <value>
             <set />
           </value>
@@ -79,6 +104,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/vendor/doctrine/orm/composer.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBagInterface.php">
           <value>
             <set />
           </value>
