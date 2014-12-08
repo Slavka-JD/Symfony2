@@ -4,6 +4,7 @@ namespace weapon\ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+
 /**
  * Product
  *
@@ -41,13 +42,6 @@ class Product
      * @ORM\Column(name="price", type="integer")
      */
     private $price;
-
-    /**
-     * @var
-     *
-     * @ORM\ManyToOne(targetEntity="Order")
-     */
-    private $CategoryProduct;
 
     /**
      * Get id
@@ -124,27 +118,4 @@ class Product
         $this->slug = $slug;
         return $this;
     }
-
-    /**
-     * Get CategoryProduct
-     *
-     * @return string
-     */
-    public function getCategoryProduct()
-    {
-        return $this->CategoryProduct;
-    }
-
-    /**
-     * Set CategoryProduct
-     *
-     * @param string $CategoryProduct
-     * @return Product
-     */
-    public function setCategoryProduct($CategoryProduct)
-    {
-        $this->CategoryProduct = $CategoryProduct;
-        return $this;
-    }
-
 }
