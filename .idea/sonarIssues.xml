@@ -53,6 +53,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Controller/RegistrationController.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/DataFixtures/ORM/LoadData.php">
           <value>
             <set />
@@ -73,7 +78,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Entity/Registration.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Entity/User.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Form/Type/AddOrder.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Form/Type/AddUser.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Form/Type/RegistrationType.php">
           <value>
             <set />
           </value>
@@ -93,7 +118,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Resources/views/Default/register.html.twig">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/vendor/autoload.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/vendor/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/FixtureInterface.php">
           <value>
             <set />
           </value>

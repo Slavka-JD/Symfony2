@@ -6,19 +6,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use weapon\ShopBundle\Entity\Order;
+use  weapon\ShopBundle\Entity\Product;
 
 class DefaultController extends Controller
 {
     /**
      * @Template()
-     * @Route("/")
-     * @Method({"GET", "POST"})
+     * @Route("/{slug}")
+     * @Method({"GET"})
      */
-
-    public function indexAction()
+    public function indexAction($slug)
     {
-        $order = $this->getDoctrine()->getManager()->getRepository('weaponShopBundle:Order')->findAll();
-        return ['order' => $order];
+        return ['Product' => $this->getDoctrine()->getManager()->getRepository('weaponShopBundle:Product')->findOneBySlug($slug)];
     }
 }

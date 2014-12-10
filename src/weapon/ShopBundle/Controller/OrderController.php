@@ -2,57 +2,65 @@
 
 namespace weapon\ShopBundle\Controller;
 
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
-use weapon\ShopBundle\Entity\Product;
+use Doctrine\ORM\EntityManager;
 use weapon\ShopBundle\Entity\Order;
+use weapon\ShopBundle\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use weapon\ShopBundle\Form\Type\AddOrder;
+
+/**
+ * @Route("/order")
+ */
 
 class OrderController extends Controller
 {
     /**
      * @Template()
-     * @Route("/new")
+     * @Route("/sales")
      * @Method({"GET", "POST"})
      */
-    public function findAction(Request $request)
+
+    public function newOrder(Request $request)
     {
-        $product = $this->getProductRepository()->findOneBySlug($slug);
         if ($request->isMethod('POST')) {
-            $product = new Product();
-            $product
-                ->setName($request->request->get('name'))
-                ->setPrice($request->request->get('price'))
-                ->setCategoryProduct($request->request->get('CategoryProduct'))
-                ->setProduct($this->getProductRepository()->find($request->request->get('product')));
-            $this->getDoctrine()->getManager()->persist($product);
-            $this->getDoctrine()->getManager()->flush();
+            $order = new Order();
+            $form = $this->createForm(new OrderType, $order);
+            $form = $this->setCreatedAt($request->request->get('createdAt'));
+
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $this->getDoctrine()->getManager()->persist($order);
+                $this->getDoctrine()->getManager()->flush();
+
+                return $this->redirect($this->get('router')->generate('weapon_shopbundle_index_index'));
+            }
+
+            return $this->render('weaponShopBundle:Default:orderFormType.html.twig', array(
+                'form' => $form->createView()));
         }
-        return ['products' => $this->getProductRepository()->findAll()];
     }
 
     /**
      * @Template()
-     * @Route("/sales/{slug}")
-     * @Method({"GET", "POST"})
+     * @Route("/success")
+     * @Method({"POST"})
      */
-    public function saleAction(Request $request, $slug)
+    public function postOrderAction()
     {
-        $order = $this->getOrderRepository()->findOneBySlug($slug);
-        if ($request->isMethod('POST')) {
-            $order = new Order();
-            $order
-                ->setProduct($product)
-                ->setQuantity($request->request->get('quantity'))
-                ->setMethodOfPayment($request->request->get('method-of-payment'))
-                ->setComment($request->request->get('comment'));
-            $this->getDoctrine()->getManager()->persist($order);
-            $this->getDoctrine()->getManager()->flush();
-        }
-        return ['order' => $order];
+        echo "Thank you for the order! Have a good hunt!";
     }
+
+    /**
+     * @return EntityRepository
+     */
+    protected function getOrderRepository()
+    {
+        return $this->getDoctrine()->getManager()->getRepository('weaponShopBundle:Order')->findAll();
+    }
+
 }
