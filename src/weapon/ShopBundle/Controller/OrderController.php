@@ -2,15 +2,16 @@
 
 namespace weapon\ShopBundle\Controller;
 
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
-use weapon\ShopBundle\Entity\Product;
+use Doctrine\ORM\EntityManager;
 use weapon\ShopBundle\Entity\Order;
+use weapon\ShopBundle\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use weapon\ShopBundle\Form\Type\AddOrder;
 
 /**
  * @Route("/order")
@@ -20,26 +21,38 @@ class OrderController extends Controller
 {
     /**
      * @Template()
-     * @Route("/sales/{slug}")
+     * @Route("/sales")
      * @Method({"GET", "POST"})
      */
-    public function saleAction(Request $request)
+
+    public function newOrder(Request $request)
     {
-        $order = $this->getOrderRepository()->findAll();
         if ($request->isMethod('POST')) {
             $order = new Order();
-            $order
-                ->setProduct($product)
-                ->setQuantity($request->request->get('quantity'))
-                ->setCreatedAt($request->request->get('createdAt'))
-                ->setMethodOfPayment($request->request->get('method-of-payment'))
-                ->setComment($request->request->get('comment'));
+            $form = $this->createForm(new OrderType, $order);
+            $form = $this->setCreatedAt($request->request->get('createdAt'));
 
-            $this->getDoctrine()->getManager()->persist($order);
-            $this->getDoctrine()->getManager()->flush();
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $this->getDoctrine()->getManager()->persist($order);
+                $this->getDoctrine()->getManager()->flush();
+
+                return $this->redirect($this->get('router')->generate('weapon_shopbundle_index_index'));
+            }
+
+            return $this->render('weaponShopBundle:Default:orderFormType.html.twig', array(
+                'form' => $form->createView()));
         }
+    }
 
-        return ['order' => $order];
+    /**
+     * @Template()
+     * @Route("/success")
+     * @Method({"POST"})
+     */
+    public function postOrderAction()
+    {
+        echo "Thank you for the order! Have a good hunt!";
     }
 
     /**
@@ -47,17 +60,7 @@ class OrderController extends Controller
      */
     protected function getOrderRepository()
     {
-        return $this->getDoctrine()->getManager()->getRepository('MiniShopBundle:Order')->findAll();
-    }
-
-    /**
-     * @Template()
-     * @Route("/orders")
-     * @Method({"POST"})
-     */
-    public function postOrderAction()
-    {
-        echo "Thank you for the order! Have a good hunt!";
+        return $this->getDoctrine()->getManager()->getRepository('weaponShopBundle:Order')->findAll();
     }
 
 }

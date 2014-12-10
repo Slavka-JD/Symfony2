@@ -14,6 +14,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
 class User
 {
     /**
+     * @ORM\Column(name="plainPassword", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(max = 4096)
+     */
+    protected $plainPassword;
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
@@ -21,40 +27,34 @@ class User
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=255)
      */
     private $username;
-
     /**
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
-
     /**
      * @var string
      *
      * @ORM\Column(name="country", type="string", length=255)
      */
     private $country;
-
     /**
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=255)
      */
     private $address;
-
     /**
      * @var string
      *
      * @ORM\Column(name="phone", type="string", length=255)
      */
     private $phone;
-
     /**
      * @var string
      *
@@ -63,17 +63,17 @@ class User
     private $cardNumber;
 
     /**
+     * Get id
+     *
+     * @return integer
+     */
+    /**
      * @var string
      *
      * @ORM\Column(name="CVC_code", type="integer", length=3)
      */
     private $CVCCode;
 
-    /**
-     * Get id
-     *
-     * @return integer
-     */
     public function getId()
     {
         return $this->id;
@@ -237,5 +237,26 @@ class User
     {
         $this->CVCCode = $CVCCode;
         return $this;
+    }
+
+    /**
+     * Get plainPassword
+     *
+     * @return string
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * Set plainPassword
+     *
+     * @param string plainPassword
+     * @return User
+     */
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
     }
 }
