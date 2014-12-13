@@ -11,5 +11,5 @@
 /composer.phar
 .idea
 help
-/idea
-/example
+/idea/*
+/example/*
