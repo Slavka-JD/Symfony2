@@ -3,12 +3,21 @@
 namespace weapon\ShopBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use weapon\ShopBundle\Form\Type\RegistrationType;
 use weapon\ShopBundle\Entity\Registration;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
 
 class RegistrationController extends Controller
 {
+    /**
+     * @Template()
+     * @Route("/registration")
+     * @Method({"GET", "POST"})
+     */
+
     public function registerAction()
     {
         $registration = new Registration();

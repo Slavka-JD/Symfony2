@@ -4,6 +4,8 @@ namespace weapon\ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\ExecutionContext;
 
 /**
  * User
@@ -14,6 +16,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
 class User
 {
     /**
+     * @var string
+     *
      * @ORM\Column(name="plainPassword", type="string", length=255)
      * @Assert\NotBlank()
      * @Assert\Length(max = 4096)
@@ -252,11 +256,12 @@ class User
     /**
      * Set plainPassword
      *
-     * @param string plainPassword
+     * @param string $plainPassword
      * @return User
      */
-    public function setPlainPassword($password)
+    public function setPlainPassword($plainPassword)
     {
-        $this->plainPassword = $password;
+        $this->plainPassword = $plainPassword;
+        return $this;
     }
 }
