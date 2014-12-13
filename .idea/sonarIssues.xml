@@ -18,6 +18,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/Resources/views/base.html.twig">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/autoload.php">
           <value>
             <set />
@@ -53,7 +58,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Controller/RegistraionSubmission.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Controller/RegistrationController.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Controller/RegistrationSubmission.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Controller/RegistrationSubmissionController.php">
           <value>
             <set />
           </value>
@@ -103,6 +123,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Form/Type/UserType.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Repository/OrderRepository.php">
           <value>
             <set />
@@ -114,6 +139,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Resources/views/Default/index.html.twig">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/weapon/ShopBundle/Resources/views/Default/orderFormType.html.twig">
           <value>
             <set />
           </value>
@@ -134,6 +164,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/composer.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle/composer.json">
           <value>
             <set />
           </value>

@@ -3,25 +3,19 @@
 namespace weapon\ShopBundle\Controller;
 
 use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\EntityManager;
 use weapon\ShopBundle\Entity\Order;
-use weapon\ShopBundle\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use weapon\ShopBundle\Form\Type\AddOrder;
-
-/**
- * @Route("/order")
- */
+use weapon\ShopBundle\Form\Type\OrderType;
 
 class OrderController extends Controller
 {
     /**
      * @Template()
-     * @Route("/sales")
+     * @Route("/order")
      * @Method({"GET", "POST"})
      */
 

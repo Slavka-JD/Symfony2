@@ -13,9 +13,9 @@ class UserType extends AbstractType
         $builder->add('username', 'text');
         $builder->add('email', 'email');
         $builder->add('plainPassword', 'repeated', array(
-            'first_name' => 'password',
+            'first_name' => 'plainPassword',
             'second_name' => 'confirm',
-            'type' => 'password',
+            'type' => 'plainPassword',
         ));
         $builder->add('country', 'choice', [
             'choices' => Countries::$countries,

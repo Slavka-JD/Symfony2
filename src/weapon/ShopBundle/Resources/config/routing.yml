@@ -4,8 +4,8 @@ weapon_shop:
 
     account_register:
         path:     /register
-        defaults: { _controller: AcmeAccountBundle:Account:register }
+        defaults: { _controller: weaponShopBundle:Account:register }
 
     account_create:
         path:     /register/create
-        defaults: { _controller: AcmeAccountBundle:Account:create }
+        defaults: { _controller: weaponShopBundle:Account:create }

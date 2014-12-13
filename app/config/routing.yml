@@ -1,4 +1,4 @@
 weapon_shop:
     resource: "@weaponShopBundle/Controller/"
     type : annotation
-    prefix:   /
+    prefix: /
