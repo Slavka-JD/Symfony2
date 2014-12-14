@@ -2,10 +2,6 @@ weapon_shop:
     resource: "@weaponShopBundle/Controller/"
     type:     annotation
 
-    account_register:
+   account_register:
         path:     /register
-        defaults: { _controller: weaponShopBundle:Account:register }
-
-    account_create:
-        path:     /register/create
-        defaults: { _controller: weaponShopBundle:Account:create }
+        defaults: { _controller: weaponShopBundle:Registration:register }
