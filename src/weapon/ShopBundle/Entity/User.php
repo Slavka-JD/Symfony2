@@ -6,23 +6,25 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\ExecutionContext;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * User
  *
  * @ORM\Table(name="User")
  * @ORM\Entity
+ * @UniqueEntity(fields="email", message="Email already taken")
  */
 class User
 {
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="plainPassword", type="string", length=255)
-     * @Assert\NotBlank()
-     * @Assert\Length(max = 4096)
-     */
-    protected $plainPassword;
+//    /**
+//     * @var string
+//     *
+//     * @ORM\Column(name="plainPassword", type="string", length=255)
+//     * @Assert\NotBlank()
+//     * @Assert\Length(max = 4096)
+//     */
+//    protected $plainPassword;
     /**
      * @var integer
      *
@@ -44,7 +46,7 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="country", type="string", length=255)
+     * @ORM\Column(name="country", type="string", length=255, nullable=true)
      */
     private $country;
     /**
@@ -62,7 +64,7 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="cardNumber", type="integer", length=16)
+     * @ORM\Column(name="cardNumber", type="string", length=16)
      */
     private $cardNumber;
 
@@ -202,7 +204,7 @@ class User
     /**
      * Get cardNumber
      *
-     * @return integer
+     * @return string
      */
     public function getCardNumber()
     {
@@ -212,7 +214,7 @@ class User
     /**
      * Set cardNumber
      *
-     * @param integer $cardNumber
+     * @param string $cardNumber
      * @return User
      */
     public function setCardNumber($cardNumber)
@@ -243,25 +245,25 @@ class User
         return $this;
     }
 
-    /**
-     * Get plainPassword
-     *
-     * @return string
-     */
-    public function getPlainPassword()
-    {
-        return $this->plainPassword;
-    }
-
-    /**
-     * Set plainPassword
-     *
-     * @param string $plainPassword
-     * @return User
-     */
-    public function setPlainPassword($plainPassword)
-    {
-        $this->plainPassword = $plainPassword;
-        return $this;
-    }
+//    /**
+//     * Get plainPassword
+//     *
+//     * @return string
+//     */
+//    public function getPlainPassword()
+//    {
+//        return $this->plainPassword;
+//    }
+//
+//    /**
+//     * Set plainPassword
+//     *
+//     * @param string $plainPassword
+//     * @return User
+//     */
+//    public function setPlainPassword($plainPassword)
+//    {
+//        $this->plainPassword = $plainPassword;
+//        return $this;
+//    }
 }

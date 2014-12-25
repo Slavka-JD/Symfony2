@@ -53,7 +53,7 @@ class Order
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created_at", type="datetime")
+     * @ORM\Column(name="createdAt", type="datetime")
      * @Gedmo\Timestampable(on="create")
      */
     private $createdAt;
@@ -68,7 +68,7 @@ class Order
     /**
      * @var string
      *
-     * @ORM\Column(name="method_of_payment", type="string", length=255)
+     * @ORM\Column(name="methodOfPayment", type="string", length=255)
      */
     private $methodOfPayment;
 

@@ -12,16 +12,16 @@ class UserType extends AbstractType
     {
         $builder->add('username', 'text');
         $builder->add('email', 'email');
-        $builder->add('plainPassword', 'repeated', array(
-            'first_name' => 'plainPassword',
-            'second_name' => 'confirm',
-            'type' => 'plainPassword',
-        ));
-        $builder->add('country', 'choice', [
-            'choices' => Countries::$countries,
-            'preferred_choices' => ['UA', 'US'],
-            'data' => 'UA',
-        ]);
+//        $builder->add('plainPassword', 'repeated', array(
+//            'first_name' => 'plainPassword',
+//            'second_name' => 'confirm',
+//            'type' => 'plainPassword',
+//        ));
+//        $builder->add('country', 'choice', [
+//            'choices' => Countries::$countries,
+//            'preferred_choices' => ['UA', 'US'],
+//            'data' => 'UA',
+//        ]);
         $builder->add('address', 'text');
         $builder->add('phone', 'text');
         $builder->add('cardNumber', 'integer');
